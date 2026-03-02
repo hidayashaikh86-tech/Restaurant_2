@@ -1,0 +1,104 @@
+Name,Price,Category
+Classic Pancakes,290,Breakfast
+Belgian Waffle,325,Breakfast
+Oatmeal with Berries,210,Breakfast
+Scrambled Eggs Plate,350,Breakfast
+Masala Omelet,299,Breakfast
+Aloo Paratha (2pc) with Curd,180,Breakfast
+Poha with Sev,120,Breakfast
+Fruit Platter,380,Breakfast
+Breakfast Burrito (Indian style),395,Breakfast
+South Indian Mini Tiffin,250,Breakfast
+---
+Crispy Chilli Baby Corn,350,Appetizer
+Cheese Garlic Bread,275,Appetizer
+Paneer Tikka,420,Appetizer
+Chicken Seekh Kebab,450,Appetizer
+Veg Spring Rolls (4pc),299,Appetizer
+Loaded Masala Fries,240,Appetizer
+Pani Puri (6pc),120,Appetizer
+Tandoori Mushrooms,380,Appetizer
+Crispy Fried Prawns,590,Appetizer
+Hara Bhara Kebab,360,Appetizer
+---
+Butter Chicken,580,Main Course
+Paneer Butter Masala,490,Main Course
+Mutton Rogan Josh,750,Main Course
+Dal Makhani,390,Main Course
+Chicken Biryani (Half),450,Main Course
+Vegetable Biryani (Half),390,Main Course
+Kadhai Paneer,470,Main Course
+Palak Corn,420,Main Course
+Fish Curry (Goan Style),650,Main Course
+Bhindi Masala,350,Main Course
+Aloo Gobi,330,Main Course
+Malai Kofta,499,Main Course
+Chicken Tikka Masala,560,Main Course
+Prawn Malai Curry,720,Main Course
+Chana Masala,370,Main Course
+Chicken Korma,550,Main Course
+Veg Kofta Curry,430,Main Course
+Mushroom Matar,399,Main Course
+Jeera Aloo,320,Main Course
+Plain Steamed Rice,190,Main Course
+---
+Plain Tandoori Roti,45,Side
+Butter Naan,70,Side
+Lachha Paratha,80,Side
+Garlic Naan,95,Side
+Green Salad,180,Side
+Raita (Plain/Boondi),150,Side
+Masala Kulcha,110,Side
+French Fries,199,Side
+Assorted Bread Basket,290,Side
+---
+Gulab Jamun (2pc),150,Dessert
+Gajar Ka Halwa,210,Dessert
+Kulfi (Pista/Malai),180,Dessert
+Moong Dal Halwa,220,Dessert
+Rasgulla (2pc),140,Dessert
+Chocolate Brownie with Ice Cream,290,Dessert
+Classic Cheesecake,320,Dessert
+Fruit Salad with Ice Cream,260,Dessert
+Phirni,190,Dessert
+---
+Bottled Water (1L),60,Drink
+Masala Chai,80,Drink
+Filter Coffee,90,Drink
+Fresh Lime Soda (Sweet/Salt),120,Drink
+Mango Lassi,180,Drink
+Sweet Lassi,160,Drink
+Can of Aerated Drink (Coke/Sprite),100,Drink
+Virgin Mojito,250,Drink
+Fresh Watermelon Juice,220,Drink
+Hot Milk,80,Drink
+Draft Beer (Indian brand, 330ml),350,Drink
+Glass of Indian Red Wine,490,Drink
+---
+Rajma Chawal,340,Main Course
+Kadi Pakora,310,Main Course
+Sarson Ka Saag (Seasonal),390,Main Course
+Chicken Changezi,580,Main Course
+Veg Thali (Standard),399,Main Course
+Non-Veg Thali (Standard),499,Main Course
+Keema Curry,520,Main Course
+Masala Dosa,150,Main Course
+Uttapam (Mixed Veg),190,Main Course
+Vada Sambar (2pc),110,Appetizer
+Idli Sambar (2pc),99,Appetizer
+Pudina Paratha,75,Side
+Basmati Pulao,220,Side
+Mix Vegetable Raita,170,Side
+Curd Rice,280,Main Course
+---
+Side of Pickles/Achar,30,Side
+Side of Plain Curd,60,Side
+---
+Jalebi with Rabri,280,Dessert
+Ice Cream Scoop (Vanilla/Chocolate),110,Dessert
+---
+Buttermilk (Chaas),90,Drink
+Aerated Drink (Diet),110,Drink
+Cold Coffee (with Ice Cream),240,Drink
+Masala Soda,140,Drink
+Lemon Iced Tea,180,Drink

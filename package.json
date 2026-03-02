@@ -1,0 +1,70 @@
+{
+  "name": "quickserve-restaurant",
+  "version": "1.0.0",
+  "description": "QuickServe restaurant billing app with web and desktop modes.",
+  "main": "desktop/main.cjs",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "desktop": "electron desktop/main.cjs",
+    "desktop:dev": "electron desktop/main.cjs",
+    "desktop:pack": "electron-builder --win nsis",
+    "desktop:pack:portable": "electron-builder --win portable",
+    "desktop:pack:win:x64": "electron-builder --win nsis --x64",
+    "desktop:pack:win:arm64": "electron-builder --win nsis --arm64",
+    "desktop:publish:win:x64": "electron-builder --win nsis --x64 --publish always",
+    "desktop:publish:win:arm64": "electron-builder --win nsis --arm64 --publish always",
+    "desktop:dir": "electron-builder --dir"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "electron-log": "^5.4.0",
+    "electron-updater": "^6.3.9",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.quickserve.desktop",
+    "productName": "QuickServe Restaurant",
+    "directories": {
+      "output": "dist-desktop"
+    },
+    "files": [
+      "desktop/**/*",
+      "index10.html",
+      "manifest.json",
+      "service-worker.js",
+      "icon.svg",
+      "server.js",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "arm64"
+          ]
+        }
+      ],
+      "artifactName": "QuickServe-Restaurant-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "QuickServe Restaurant"
+    },
+    "generateUpdatesFilesForAllChannels": true
+  }
+}

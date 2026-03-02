@@ -1,0 +1,7 @@
+{
+  "provider": "generic",
+  "url": "https://YOUR-UPDATE-DOMAIN/quickserve/win",
+  "channel": "latest",
+  "autoDownload": true,
+  "checkIntervalMinutes": 240
+}
