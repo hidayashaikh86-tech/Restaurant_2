@@ -90,9 +90,197 @@
             color: #94a3b8;
         }
 
+        .order-panel-section {
+            border: 1px solid #e2e8f0;
+            border-radius: 1rem;
+            background: linear-gradient(180deg, rgba(248, 250, 252, 0.95) 0%, rgba(255, 255, 255, 0.98) 100%);
+            max-height: min(26vh, 248px);
+            overflow-y: auto;
+        }
+
+        .order-items-shell {
+            min-height: 220px;
+        }
+
+        .order-step-row label {
+            font-size: 0.76rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #64748b;
+        }
+
+        .order-step-row select,
+        .order-step-row input {
+            min-height: 48px;
+        }
+
         @media (max-width: 640px) {
             #order-flow-track {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .order-items-shell {
+                min-height: 160px;
+            }
+
+            .order-panel-section {
+                max-height: none;
+            }
+        }
+
+        @media (min-width: 1280px) {
+            #app-main-content.pos-desktop-layout {
+                width: min(1760px, calc(100vw - 3rem));
+                max-width: none;
+                grid-template-columns: minmax(420px, 0.86fr) minmax(620px, 1.14fr);
+                align-items: start;
+                gap: 1.5rem;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            #app-main-content.pos-desktop-layout .menu-panel,
+            #app-main-content.pos-desktop-layout .order-panel {
+                min-width: 0;
+            }
+
+            #app-main-content.pos-desktop-layout .menu-panel {
+                padding: 1.75rem;
+            }
+
+            #app-main-content.pos-desktop-layout .menu-control-bar {
+                flex-wrap: wrap;
+            }
+
+            #app-main-content.pos-desktop-layout .menu-control-bar #search-input {
+                flex: 1 1 100%;
+            }
+
+            #app-main-content.pos-desktop-layout .menu-control-bar button {
+                flex: 1 1 calc(50% - 0.5rem);
+                min-width: 160px;
+            }
+
+            #app-main-content.pos-desktop-layout #menu-items-container {
+                grid-template-columns: minmax(0, 1fr);
+                max-height: calc(100dvh - 23rem);
+            }
+
+            #app-main-content.pos-desktop-layout .order-panel {
+                position: sticky;
+                top: 1rem;
+                height: var(--desktop-order-panel-height, min(840px, calc(100dvh - 10rem)));
+                padding: 1.25rem;
+            }
+
+            #app-main-content.pos-desktop-layout .order-panel h2 {
+                margin-bottom: 0.85rem;
+            }
+
+            #app-main-content.pos-desktop-layout #order-flow-strip {
+                display: none;
+            }
+
+            #app-main-content.pos-desktop-layout .order-panel-section {
+                display: grid;
+                grid-template-columns: minmax(210px, 0.9fr) minmax(230px, 1fr) minmax(260px, 1.1fr);
+                gap: 0.75rem;
+                max-height: none;
+                overflow: hidden;
+                padding: 0.85rem;
+            }
+
+            #app-main-content.pos-desktop-layout .order-step-row {
+                margin-bottom: 0;
+                min-width: 0;
+            }
+
+            #app-main-content.pos-desktop-layout .order-step-row select,
+            #app-main-content.pos-desktop-layout .order-step-row input {
+                min-height: 42px;
+                padding-top: 0.55rem;
+                padding-bottom: 0.55rem;
+            }
+
+            #app-main-content.pos-desktop-layout #counter-grid,
+            #app-main-content.pos-desktop-layout #table-grid {
+                gap: 0.35rem;
+            }
+
+            #app-main-content.pos-desktop-layout .counter-btn,
+            #app-main-content.pos-desktop-layout .table-btn {
+                min-height: 42px;
+                padding: 0.35rem 0.45rem;
+                font-size: 0.72rem;
+                line-height: 1.12;
+            }
+
+            #app-main-content.pos-desktop-layout #counter-custom-row {
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                gap: 0.35rem;
+                margin-top: 0.45rem;
+            }
+
+            #app-main-content.pos-desktop-layout #counter-custom-input {
+                min-width: 0;
+                font-size: 0.8rem;
+            }
+
+            #app-main-content.pos-desktop-layout #counter-custom-row button {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+
+            #app-main-content.pos-desktop-layout .order-items-shell {
+                flex: 1 1 auto;
+                min-height: 240px;
+            }
+
+            #app-main-content.pos-desktop-layout #current-order-list {
+                padding: 0.55rem;
+            }
+
+            #app-main-content.pos-desktop-layout #order-last-added-note {
+                max-width: 360px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            #app-main-content.pos-desktop-layout .order-footer {
+                margin-top: 0.65rem;
+                padding-top: 0.65rem;
+            }
+
+            #app-main-content.pos-desktop-layout .order-action-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            #app-main-content.pos-desktop-layout .order-action-grid button {
+                min-width: 0;
+                white-space: nowrap;
+            }
+        }
+
+        @media (min-width: 1280px) and (max-height: 820px) {
+            #app-main-content.pos-desktop-layout .order-panel {
+                height: var(--desktop-order-panel-height, calc(100dvh - 10rem));
+            }
+
+            #app-main-content.pos-desktop-layout .order-panel-section {
+                gap: 0.55rem;
+            }
+
+            #app-main-content.pos-desktop-layout .counter-btn,
+            #app-main-content.pos-desktop-layout .table-btn {
+                min-height: 38px;
+                font-size: 0.68rem;
+            }
+
+            #app-main-content.pos-desktop-layout .order-items-shell {
+                min-height: 190px;
             }
         }
     </style>
@@ -128,14 +316,14 @@
     </header>
 
     <!-- Main Content Area - Initially Hidden -->
-    <main id="app-main-content" class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 lg:grid-cols-3 gap-8 hidden">
+    <main id="app-main-content" class="pos-desktop-layout max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 grid grid-cols-1 gap-8 hidden">
 
         <!-- Restaurant Menu Panel -->
-        <div class="lg:col-span-2 bg-white rounded-xl shadow-lg p-6 border border-gray-100">
+        <div class="menu-panel bg-white rounded-xl shadow-lg p-6 border border-gray-100">
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Restaurant Menu</h2>
 
             <!-- Control Bar -->
-            <div class="flex flex-col sm:flex-row gap-2 mb-4">
+            <div class="menu-control-bar flex flex-col sm:flex-row gap-2 mb-4">
                 <input type="text" id="search-input" placeholder="Search menu by name, category, or initials (e.g., 'cp' for 'Chhola Puri')..."
                     class="flex-grow p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-sm">
                 
@@ -170,75 +358,75 @@
 
 
             <!-- Menu Items Container -->
-            <div id="menu-items-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-[60vh] overflow-y-auto pr-2">
+            <div id="menu-items-container" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-1 gap-4 max-h-[60vh] overflow-y-auto pr-2">
                 <!-- Menu items will be rendered here -->
             </div>
         </div>
 
         <!-- Current Order Panel -->
-        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 sticky top-8 h-fit flex flex-col overflow-hidden lg:h-[calc(100vh-160px)]">
+        <div class="order-panel bg-white rounded-xl shadow-lg p-6 border border-gray-100 flex flex-col min-h-0 overflow-hidden">
             <h2 class="text-2xl font-bold text-gray-800 mb-4">Current Order</h2>
 
-            <div id="order-flow-strip" class="mb-4">
-                <p class="text-[11px] font-semibold uppercase tracking-wide text-gray-500 mb-2">Order Flow</p>
-                <div id="order-flow-track" role="status" aria-live="polite">
-                    <div id="order-flow-step-order" data-order-flow-step="order" class="order-flow-step">1. Order For</div>
-                    <div id="order-flow-step-counter" data-order-flow-step="counter" class="order-flow-step">2. Counter</div>
-                    <div id="order-flow-step-table" data-order-flow-step="table" class="order-flow-step">3. Table</div>
-                    <div id="order-flow-step-print" data-order-flow-step="print" class="order-flow-step">4. Print</div>
+            <div class="order-panel-section p-3 flex-shrink-0">
+                <div id="order-flow-strip" class="mb-3">
+                    <p class="text-[11px] font-semibold uppercase tracking-wide text-gray-500 mb-2">Order Flow</p>
+                    <div id="order-flow-track" role="status" aria-live="polite">
+                        <div id="order-flow-step-order" data-order-flow-step="order" class="order-flow-step">1. Order For</div>
+                        <div id="order-flow-step-counter" data-order-flow-step="counter" class="order-flow-step">2. Counter</div>
+                        <div id="order-flow-step-table" data-order-flow-step="table" class="order-flow-step">3. Table</div>
+                        <div id="order-flow-step-print" data-order-flow-step="print" class="order-flow-step">4. Print</div>
+                    </div>
                 </div>
-            </div>
-            
-            <div id="order-scroll-area" class="flex-1 min-h-0 overflow-y-auto pr-2">
-                <div id="order-type-step" class="mb-4">
+
+                <div id="order-type-step" class="order-step-row mb-3">
                     <div class="flex items-center justify-between">
-                        <label for="order-type" class="block text-sm font-medium text-gray-700">Order For</label>
+                        <label for="order-type" class="block">Order For</label>
                         <button type="button" id="order-type-edit" onclick="expandStep('order-type')" class="text-xs text-indigo-600 font-semibold hidden">Edit</button>
                     </div>
                     <p id="order-type-summary" class="text-sm text-gray-600 mt-1 hidden"></p>
-                    <div id="order-type-body" class="mt-2">
-                        <select id="order-type" onchange="toggleTableSelection()" class="w-full p-2 border border-gray-300 rounded-lg">
+                    <div id="order-type-body" class="mt-1.5">
+                        <select id="order-type" onchange="toggleTableSelection()" class="w-full p-2.5 border border-gray-300 rounded-lg text-sm font-semibold">
                             <option value="Table/Dine-In">Table/Dine-In</option>
                             <option value="Parcel/Takeaway">Parcel/Takeaway</option>
                         </select>
                     </div>
                 </div>
 
-                <div id="counter-step" class="mb-4">
+                <div id="counter-step" class="order-step-row mb-3">
                     <div class="flex items-center justify-between">
-                        <label class="block text-sm font-medium text-gray-700">Counter</label>
+                        <label class="block">Counter</label>
                         <button type="button" id="counter-edit" onclick="expandStep('counter')" class="text-xs text-indigo-600 font-semibold hidden">Edit</button>
                     </div>
                     <p id="counter-summary" class="text-sm text-gray-600 mt-1 hidden"></p>
-                    <div id="counter-body" class="mt-2">
-                        <div class="grid grid-cols-3 gap-2" id="counter-grid">
+                    <div id="counter-body" class="mt-1.5">
+                        <div class="grid grid-cols-3 gap-1.5" id="counter-grid">
                             <button type="button" onclick="selectCounter('Counter 1')" data-counter="Counter 1"
-                                class="counter-btn py-2 px-3 bg-indigo-600 text-white border-2 border-indigo-600 rounded-lg font-semibold text-sm transition duration-150">
+                                class="counter-btn py-2 px-2.5 bg-indigo-600 text-white border-2 border-indigo-600 rounded-lg font-semibold text-xs transition duration-150">
                                 Counter 1
                             </button>
                             <button type="button" onclick="selectCounter('Counter 2')" data-counter="Counter 2"
-                                class="counter-btn py-2 px-3 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-sm transition duration-150 hover:bg-indigo-100">
+                                class="counter-btn py-2 px-2.5 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-xs transition duration-150 hover:bg-indigo-100">
                                 Counter 2
                             </button>
                             <button type="button" onclick="selectCounter('Counter 3')" data-counter="Counter 3"
-                                class="counter-btn py-2 px-3 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-sm transition duration-150 hover:bg-indigo-100">
+                                class="counter-btn py-2 px-2.5 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-xs transition duration-150 hover:bg-indigo-100">
                                 Counter 3
                             </button>
                             <button type="button" onclick="selectCounter('Counter 4')" data-counter="Counter 4"
-                                class="counter-btn py-2 px-3 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-sm transition duration-150 hover:bg-indigo-100">
+                                class="counter-btn py-2 px-2.5 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-xs transition duration-150 hover:bg-indigo-100">
                                 Counter 4
                             </button>
                             <button type="button" onclick="selectCounter('Counter 5')" data-counter="Counter 5"
-                                class="counter-btn py-2 px-3 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-sm transition duration-150 hover:bg-indigo-100">
+                                class="counter-btn py-2 px-2.5 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-xs transition duration-150 hover:bg-indigo-100">
                                 Counter 5
                             </button>
                             <button type="button" onclick="selectCounter('Counter 6')" data-counter="Counter 6"
-                                class="counter-btn py-2 px-3 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-sm transition duration-150 hover:bg-indigo-100">
+                                class="counter-btn py-2 px-2.5 bg-gray-100 text-gray-700 border-2 border-gray-300 rounded-lg font-semibold text-xs transition duration-150 hover:bg-indigo-100">
                                 Counter 6
                             </button>
                         </div>
                         <div id="counter-compact" class="hidden">
-                            <select id="counter-select" onchange="handleCompactCounterChange()" class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                            <select id="counter-select" onchange="handleCompactCounterChange()" class="w-full p-2.5 border border-gray-300 rounded-lg text-sm font-semibold">
                                 <option value="" disabled selected>Select counter</option>
                                 <option value="Counter 1">Counter 1</option>
                                 <option value="Counter 2">Counter 2</option>
@@ -250,10 +438,10 @@
                         </div>
                         <div id="counter-custom-row" class="mt-2 flex items-center gap-2">
                             <input type="text" id="counter-custom-input"
-                                class="flex-grow p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+                                class="flex-grow p-2.5 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 text-sm"
                                 placeholder="Custom counter (optional)">
                             <button type="button" onclick="applyCustomCounter()"
-                                class="px-3 py-2 bg-slate-600 hover:bg-slate-700 text-white text-sm font-semibold rounded-lg">
+                                class="px-3 py-2.5 bg-slate-600 hover:bg-slate-700 text-white text-sm font-semibold rounded-lg">
                                 Use
                             </button>
                         </div>
@@ -262,45 +450,45 @@
                 </div>
 
                 <!-- Table Number Selection (shown only for Dine-In) -->
-                <div id="table-step" class="mb-4">
+                <div id="table-step" class="order-step-row">
                     <div class="flex items-center justify-between">
-                        <label class="block text-sm font-medium text-gray-700">Select Table Number</label>
+                        <label class="block">Table</label>
                         <button type="button" id="table-edit" onclick="expandStep('table')" class="text-xs text-indigo-600 font-semibold hidden">Edit</button>
                     </div>
                     <p id="table-summary" class="text-sm text-gray-600 mt-1 hidden"></p>
-                    <div id="table-body" class="mt-2">
+                    <div id="table-body" class="mt-1.5">
                         <div id="table-selection-container">
-                            <div id="table-grid" class="grid grid-cols-3 gap-2">
-                                <button type="button" onclick="selectTable(1)" data-table="1" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                            <div id="table-grid" class="grid grid-cols-3 gap-1.5">
+                                <button type="button" onclick="selectTable(1)" data-table="1" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 1
                                 </button>
-                                <button type="button" onclick="selectTable(2)" data-table="2" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(2)" data-table="2" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 2
                                 </button>
-                                <button type="button" onclick="selectTable(3)" data-table="3" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(3)" data-table="3" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 3
                                 </button>
-                                <button type="button" onclick="selectTable(4)" data-table="4" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(4)" data-table="4" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 4
                                 </button>
-                                <button type="button" onclick="selectTable(5)" data-table="5" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(5)" data-table="5" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 5
                                 </button>
-                                <button type="button" onclick="selectTable(6)" data-table="6" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(6)" data-table="6" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 6
                                 </button>
-                                <button type="button" onclick="selectTable(7)" data-table="7" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(7)" data-table="7" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 7
                                 </button>
-                                <button type="button" onclick="selectTable(8)" data-table="8" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(8)" data-table="8" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 8
                                 </button>
-                                <button type="button" onclick="selectTable(9)" data-table="9" class="table-btn py-3 px-4 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-gray-700 transition duration-150">
+                                <button type="button" onclick="selectTable(9)" data-table="9" class="table-btn py-2 px-3 bg-gray-100 hover:bg-indigo-100 border-2 border-gray-300 rounded-lg font-semibold text-xs text-gray-700 transition duration-150">
                                     Table 9
                                 </button>
                             </div>
                             <div id="table-compact" class="hidden mt-2">
-                                <select id="table-select" onchange="handleCompactTableChange()" class="w-full p-2 border border-gray-300 rounded-lg text-sm">
+                                <select id="table-select" onchange="handleCompactTableChange()" class="w-full p-2.5 border border-gray-300 rounded-lg text-sm font-semibold">
                                     <option value="" disabled selected>Select table</option>
                                     <option value="1">Table 1</option>
                                     <option value="2">Table 2</option>
@@ -317,15 +505,27 @@
                         <input type="hidden" id="selected-table" value="">
                     </div>
                 </div>
+            </div>
 
-                <!-- Order List -->
-                <div id="current-order-list" class="space-y-3 min-h-[100px]">
+            <div class="mt-4 flex items-start justify-between gap-3 flex-shrink-0">
+                <div>
+                    <p class="text-[11px] font-semibold uppercase tracking-wide text-gray-500">Live Basket</p>
+                    <h3 class="text-sm font-semibold text-gray-800">Selected Items</h3>
+                    <p id="order-last-added-note" class="hidden text-xs text-gray-500 mt-1"></p>
+                </div>
+                <span id="order-item-count" class="inline-flex items-center rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 border border-indigo-100">
+                    0 items
+                </span>
+            </div>
+
+            <div class="order-items-shell mt-2 flex-1 min-h-0 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/80">
+                <div id="current-order-list" class="h-full overflow-y-auto p-2.5 space-y-2">
                     <!-- Order items will be rendered here -->
-                    <p id="empty-order-message" class="text-gray-400 text-center italic mt-4">No items added yet.</p>
+                    <p id="empty-order-message" class="text-gray-400 text-center italic mt-6">No items added yet.</p>
                 </div>
             </div>
             
-            <div class="mt-4 pt-4 border-t border-gray-200 space-y-2 flex-shrink-0 bg-white">
+            <div class="order-footer mt-3 pt-3 border-t border-gray-200 space-y-2 flex-shrink-0 bg-white">
                 <div id="order-edit-banner" class="hidden rounded-lg border border-amber-300 bg-amber-50 p-2 text-xs text-amber-800">
                     <div class="flex items-center justify-between gap-2">
                         <span id="order-edit-banner-text" class="font-semibold">Editing confirmed order</span>
@@ -347,18 +547,20 @@
                     <span>Total Payable:</span>
                     <span id="total-payable">0.00</span>
                 </div>
-                <button id="confirm-order-btn" onclick="confirmCurrentOrder()"
-                    class="w-full mt-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-xl shadow-md transition duration-150">
-                    <i data-lucide="check-circle-2" class="w-5 h-5 inline mr-2"></i> Confirm Order
-                </button>
-                <button id="print-bill-btn" onclick="printBill()"
-                    class="w-full mt-2 py-3 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl shadow-lg transition duration-150">
-                    <i data-lucide="printer" class="w-5 h-5 inline mr-2"></i> Print Bill
-                </button>
-                <button onclick="clearOrder()"
-                    class="w-full mt-2 py-2 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl shadow-md transition duration-150">
-                    Clear Order
-                </button>
+                <div class="order-action-grid grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3">
+                    <button id="confirm-order-btn" onclick="confirmCurrentOrder()"
+                        class="w-full py-2.5 bg-indigo-500 hover:bg-indigo-600 text-white font-semibold rounded-xl shadow-md transition duration-150">
+                        <i data-lucide="check-circle-2" class="w-5 h-5 inline mr-2"></i> Confirm Order
+                    </button>
+                    <button id="print-bill-btn" onclick="printBill()"
+                        class="w-full py-2.5 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl shadow-lg transition duration-150">
+                        <i data-lucide="printer" class="w-5 h-5 inline mr-2"></i> Print Bill
+                    </button>
+                    <button onclick="clearOrder()"
+                        class="w-full py-2.5 bg-red-500 hover:bg-red-600 text-white font-semibold rounded-xl shadow-md transition duration-150 sm:col-span-2 xl:col-span-1">
+                        Clear Order
+                    </button>
+                </div>
             </div>
         </div>
     </main>
@@ -511,6 +713,29 @@
                             class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"
                             placeholder="Example: Shop will remain closed from 10 Mar to 12 Mar."></textarea>
                         <p class="text-xs text-gray-500 mt-1">Useful for announcements, holiday notices, or customer messages.</p>
+                    </div>
+                    <div>
+                        <label for="settings-printer-profile" class="block text-sm font-medium text-gray-700">Receipt Printer Profile</label>
+                        <select id="settings-printer-profile" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="thermal-58">Thermal 58mm (ESC/POS)</option>
+                            <option value="thermal-80">Thermal 80mm</option>
+                            <option value="a4">A4 / Laser Printer</option>
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">Select the printer paper format so bill width and line wrapping fit correctly.</p>
+                    </div>
+                    <div>
+                        <label for="settings-receipt-currency-mode" class="block text-sm font-medium text-gray-700">Receipt Currency Format</label>
+                        <select id="settings-receipt-currency-mode" class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="symbol">Rupee Symbol (₹)</option>
+                            <option value="ascii">ASCII Safe (Rs)</option>
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">Use ASCII mode for printers that do not support the ₹ symbol clearly.</p>
+                    </div>
+                    <div>
+                        <label for="settings-receipt-feed-lines" class="block text-sm font-medium text-gray-700">Thermal Feed Lines After Bill</label>
+                        <input type="number" id="settings-receipt-feed-lines" min="0" max="12" step="1"
+                            class="w-full p-2 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                        <p class="text-xs text-gray-500 mt-1">Adds blank lines at the end so manual tear/cutter does not cut totals.</p>
                     </div>
                     <div>
                         <label for="settings-ui-mode" class="block text-sm font-medium text-gray-700">UI Mode</label>
@@ -799,6 +1024,8 @@
         // App State
         let menuItems = [];
         let currentOrder = [];
+        let lastTouchedOrderItemId = '';
+        let pendingOrderRevealItemId = '';
         let isMenuReady = false;
         let isSettingsReady = false;
         let salesHistoryCache = [];
@@ -822,6 +1049,9 @@
             address: '',
             receiptFooterMessage: 'Thank you! Visit Again.',
             receiptNote: '',
+            printerProfile: 'thermal-58',
+            receiptCurrencyMode: 'symbol',
+            receiptFeedLines: 4,
             managerPin: '',
             managerPinHash: '',
             managerPinSalt: '',
@@ -840,6 +1070,13 @@
         const OFFLINE_SESSION_MAX_AGE_DAYS = 30;
         const UI_MODE_DEFAULT = 'default';
         const UI_MODE_COMPACT = 'compact';
+        const PRINTER_PROFILE_THERMAL_58 = 'thermal-58';
+        const PRINTER_PROFILE_THERMAL_80 = 'thermal-80';
+        const PRINTER_PROFILE_A4 = 'a4';
+        const RECEIPT_CURRENCY_SYMBOL = 'symbol';
+        const RECEIPT_CURRENCY_ASCII = 'ascii';
+        const RECEIPT_FEED_LINES_MIN = 0;
+        const RECEIPT_FEED_LINES_MAX = 12;
         const RECEIPT_FOOTER_MAX_LENGTH = 120;
         const RECEIPT_NOTE_MAX_LENGTH = 260;
         const SETTINGS_UNLOCK_WINDOW_MS = 10 * 60 * 1000;
@@ -917,6 +1154,36 @@
             const params = new URLSearchParams(window.location.search);
             return params.get('desktop') === '1' || navigator.userAgent.toLowerCase().includes('electron');
         })();
+        const DESKTOP_BRIDGE = window.quickserveDesktop || null;
+
+        function canUseDesktopNativePrint() {
+            return IS_DESKTOP_SHELL && Boolean(DESKTOP_BRIDGE?.printReceipt);
+        }
+
+        let desktopOrderPanelHeightFrame = null;
+
+        function syncDesktopOrderPanelHeight() {
+            const orderPanel = document.querySelector('.order-panel');
+            if (!orderPanel) return;
+
+            if (!window.matchMedia('(min-width: 1280px)').matches) {
+                orderPanel.style.removeProperty('--desktop-order-panel-height');
+                return;
+            }
+
+            const panelTop = Math.max(orderPanel.getBoundingClientRect().top, 16);
+            const availableHeight = window.innerHeight - panelTop - 24;
+            const safeHeight = Math.max(420, Math.min(860, availableHeight));
+            orderPanel.style.setProperty('--desktop-order-panel-height', `${Math.round(safeHeight)}px`);
+        }
+
+        function requestDesktopOrderPanelHeightSync() {
+            if (desktopOrderPanelHeightFrame) return;
+            desktopOrderPanelHeightFrame = requestAnimationFrame(() => {
+                desktopOrderPanelHeightFrame = null;
+                syncDesktopOrderPanelHeight();
+            });
+        }
         
         // UI Elements
         const loadingOverlay = document.getElementById('loading-overlay');
@@ -929,6 +1196,8 @@
         const authButton = document.getElementById('auth-button');
         const menuContainer = document.getElementById('menu-items-container');
         const orderList = document.getElementById('current-order-list');
+        const orderItemCount = document.getElementById('order-item-count');
+        const orderLastAddedNote = document.getElementById('order-last-added-note');
         const confirmOrderBtn = document.getElementById('confirm-order-btn');
         const orderEditBanner = document.getElementById('order-edit-banner');
         const orderEditBannerText = document.getElementById('order-edit-banner-text');
@@ -1241,6 +1510,207 @@
             return 10;
         }
 
+        function normalizePrinterProfile(value) {
+            if (value === PRINTER_PROFILE_THERMAL_80 || value === PRINTER_PROFILE_A4) {
+                return value;
+            }
+            return PRINTER_PROFILE_THERMAL_58;
+        }
+
+        function normalizeReceiptCurrencyMode(value) {
+            return value === RECEIPT_CURRENCY_ASCII ? RECEIPT_CURRENCY_ASCII : RECEIPT_CURRENCY_SYMBOL;
+        }
+
+        function normalizeReceiptFeedLines(value) {
+            const parsed = Number(value);
+            if (!Number.isFinite(parsed)) return DEFAULT_SETTINGS.receiptFeedLines;
+            return Math.round(clampNumber(parsed, RECEIPT_FEED_LINES_MIN, RECEIPT_FEED_LINES_MAX));
+        }
+
+        function getReceiptPrintProfile(profileValue = restaurantSettings.printerProfile) {
+            const profile = normalizePrinterProfile(profileValue);
+            if (profile === PRINTER_PROFILE_THERMAL_80) {
+                return {
+                    profile,
+                    isThermal: true,
+                    paperWidthMm: 80,
+                    charsPerLine: 40,
+                    contentWidthMm: 68,
+                    pageMarginMm: 0,
+                    fontSizePx: 10,
+                    lineHeight: 1.26,
+                    fontWeight: 400,
+                    minPageHeightMm: 80,
+                    maxPageHeightMm: 1200,
+                    heightPaddingMm: 12
+                };
+            }
+            if (profile === PRINTER_PROFILE_A4) {
+                return {
+                    profile,
+                    isThermal: false,
+                    paperWidthMm: 210,
+                    charsPerLine: 64,
+                    contentWidthMm: 180,
+                    pageSizeCss: 'A4 portrait',
+                    pageMarginMm: 7,
+                    fontSizePx: 12,
+                    lineHeight: 1.38,
+                    fontWeight: 400
+                };
+            }
+            return {
+                profile: PRINTER_PROFILE_THERMAL_58,
+                isThermal: true,
+                paperWidthMm: 58,
+                charsPerLine: 32,
+                contentWidthMm: 46,
+                pageMarginMm: 0,
+                fontSizePx: 9,
+                lineHeight: 1.24,
+                fontWeight: 400,
+                minPageHeightMm: 72,
+                maxPageHeightMm: 1200,
+                heightPaddingMm: 10
+            };
+        }
+
+        function getReceiptPageSpec(profileConfig, lineCount) {
+            if (!profileConfig?.isThermal) {
+                return {
+                    css: profileConfig?.pageSizeCss || 'A4 portrait',
+                    widthMicrons: null,
+                    heightMicrons: null
+                };
+            }
+
+            const safeLineCount = Math.max(1, Number(lineCount) || 1);
+            const lineHeightMm = profileConfig.fontSizePx * 0.2645833333 * profileConfig.lineHeight;
+            const estimatedHeightMm = Math.ceil(
+                (safeLineCount * lineHeightMm) +
+                (profileConfig.pageMarginMm * 2) +
+                (profileConfig.heightPaddingMm || 0)
+            );
+            const pageHeightMm = clampNumber(
+                estimatedHeightMm,
+                profileConfig.minPageHeightMm || 60,
+                profileConfig.maxPageHeightMm || 1200
+            );
+
+            return {
+                css: `${profileConfig.paperWidthMm}mm ${pageHeightMm}mm`,
+                widthMicrons: Math.round(profileConfig.paperWidthMm * 1000),
+                heightMicrons: Math.round(pageHeightMm * 1000)
+            };
+        }
+
+        function formatReceiptMoney(value, currencyMode = restaurantSettings.receiptCurrencyMode, options = {}) {
+            const numeric = Number(value || 0);
+            const safeValue = Number.isFinite(numeric) ? numeric : 0;
+            const rawAmount = safeValue.toFixed(2);
+            const amount = options.trimZeros
+                ? rawAmount.replace(/\.00$/, '').replace(/(\.\d)0$/, '$1')
+                : rawAmount;
+            const normalizedCurrencyMode = normalizeReceiptCurrencyMode(currencyMode);
+            const prefix = normalizedCurrencyMode === RECEIPT_CURRENCY_ASCII ? 'Rs ' : '₹';
+            return `${prefix}${amount}`;
+        }
+
+        function sanitizeReceiptText(value, options = {}) {
+            const asciiOnly = options.asciiOnly === true;
+            const collapseWhitespace = options.collapseWhitespace !== false;
+            let text = String(value ?? '')
+                .replace(/\r\n?/g, '\n')
+                .replace(/[\u200B-\u200D\uFEFF]/g, '')
+                .replace(/\t/g, ' ');
+
+            if (collapseWhitespace) {
+                text = text.split('\n').map(line => line.replace(/\s+/g, ' ').trim()).join('\n');
+            } else {
+                text = text.trim();
+            }
+
+            if (asciiOnly) {
+                text = text.replace(/₹/g, 'Rs ');
+                try {
+                    text = text.normalize('NFKD');
+                } catch (error) {
+                    // Ignore normalize failures on older engines.
+                }
+                text = text.replace(/[^\x20-\x7E\n]/g, '');
+            }
+
+            return text;
+        }
+
+        function wrapReceiptText(value, maxWidth, options = {}) {
+            const width = Math.max(8, Number(maxWidth) || 32);
+            const sanitized = sanitizeReceiptText(value, options);
+            if (!sanitized) return [''];
+
+            const wrappedLines = [];
+            const sourceLines = sanitized.split('\n');
+
+            sourceLines.forEach((sourceLine) => {
+                const words = sourceLine.split(' ').filter(Boolean);
+                if (words.length === 0) {
+                    wrappedLines.push('');
+                    return;
+                }
+
+                let currentLine = '';
+                words.forEach((word) => {
+                    if (word.length > width) {
+                        if (currentLine) {
+                            wrappedLines.push(currentLine);
+                            currentLine = '';
+                        }
+                        let remaining = word;
+                        while (remaining.length > width) {
+                            wrappedLines.push(remaining.slice(0, width));
+                            remaining = remaining.slice(width);
+                        }
+                        currentLine = remaining;
+                        return;
+                    }
+
+                    const candidate = currentLine ? `${currentLine} ${word}` : word;
+                    if (candidate.length <= width) {
+                        currentLine = candidate;
+                    } else {
+                        if (currentLine) wrappedLines.push(currentLine);
+                        currentLine = word;
+                    }
+                });
+
+                if (currentLine) wrappedLines.push(currentLine);
+            });
+
+            return wrappedLines.length > 0 ? wrappedLines : [''];
+        }
+
+        function centerReceiptLine(value, maxWidth, options = {}) {
+            const width = Math.max(8, Number(maxWidth) || 32);
+            const safeLine = sanitizeReceiptText(value, options).slice(0, width);
+            const leftPad = Math.max(0, Math.floor((width - safeLine.length) / 2));
+            return `${' '.repeat(leftPad)}${safeLine}`;
+        }
+
+        function formatReceiptPairLine(label, amount, maxWidth, options = {}) {
+            const width = Math.max(8, Number(maxWidth) || 32);
+            const safeAmount = sanitizeReceiptText(amount, options);
+            const safeLabel = sanitizeReceiptText(label, options);
+            if (!safeAmount) return safeLabel.slice(0, width);
+            if (safeAmount.length >= width) return safeAmount.slice(0, width);
+
+            const maxLabelLength = Math.max(0, width - safeAmount.length - 1);
+            const trimmedLabel = safeLabel.length > maxLabelLength
+                ? safeLabel.slice(0, maxLabelLength)
+                : safeLabel;
+            const gap = Math.max(1, width - trimmedLabel.length - safeAmount.length);
+            return `${trimmedLabel}${' '.repeat(gap)}${safeAmount}`;
+        }
+
         function normalizeSettings(data = {}) {
             const restaurantName = (data.restaurantName || DEFAULT_SETTINGS.restaurantName).toString().trim() || DEFAULT_SETTINGS.restaurantName;
             const gstRaw = Number(data.gstPercent);
@@ -1256,6 +1726,9 @@
                 ? data.receiptNote.replace(/\r\n?/g, '\n').trim()
                 : '';
             const receiptNote = receiptNoteRaw.slice(0, RECEIPT_NOTE_MAX_LENGTH);
+            const printerProfile = normalizePrinterProfile(data.printerProfile);
+            const receiptCurrencyMode = normalizeReceiptCurrencyMode(data.receiptCurrencyMode);
+            const receiptFeedLines = normalizeReceiptFeedLines(data.receiptFeedLines);
             const managerPinRaw = typeof data.managerPin === 'string' ? data.managerPin.trim() : '';
             const managerPin = /^\d{4,8}$/.test(managerPinRaw) ? managerPinRaw : '';
             const managerPinHashRaw = typeof data.managerPinHash === 'string' ? data.managerPinHash.trim().toLowerCase() : '';
@@ -1272,6 +1745,9 @@
                 address,
                 receiptFooterMessage,
                 receiptNote,
+                printerProfile,
+                receiptCurrencyMode,
+                receiptFeedLines,
                 managerPin,
                 managerPinHash,
                 managerPinSalt,
@@ -2190,6 +2666,9 @@
                     restaurantSettings.address ||
                     restaurantSettings.receiptNote ||
                     restaurantSettings.receiptFooterMessage !== DEFAULT_SETTINGS.receiptFooterMessage ||
+                    restaurantSettings.printerProfile !== DEFAULT_SETTINGS.printerProfile ||
+                    restaurantSettings.receiptCurrencyMode !== DEFAULT_SETTINGS.receiptCurrencyMode ||
+                    Number(restaurantSettings.receiptFeedLines ?? DEFAULT_SETTINGS.receiptFeedLines) !== Number(DEFAULT_SETTINGS.receiptFeedLines) ||
                     restaurantSettings.managerPin ||
                     restaurantSettings.managerPinHash ||
                     restaurantSettings.managerPinSalt
@@ -3287,6 +3766,7 @@
                 }, 300);
                 // Ensure lucide icons are rendered after loading
                 lucide.createIcons();
+                requestDesktopOrderPanelHeightSync();
             }
         }
 
@@ -3334,6 +3814,9 @@
                 pinState.classList.toggle('text-gray-500', !pinConfigured);
             }
             document.getElementById('settings-ui-mode').value = restaurantSettings.uiMode || UI_MODE_DEFAULT;
+            document.getElementById('settings-printer-profile').value = normalizePrinterProfile(restaurantSettings.printerProfile);
+            document.getElementById('settings-receipt-currency-mode').value = normalizeReceiptCurrencyMode(restaurantSettings.receiptCurrencyMode);
+            document.getElementById('settings-receipt-feed-lines').value = normalizeReceiptFeedLines(restaurantSettings.receiptFeedLines);
 
             if (autoCloudSyncToggle) {
                 autoCloudSyncToggle.checked = isAutoCloudSyncEnabled() && isCloudAccessAllowed();
@@ -3374,6 +3857,9 @@
             const confirmPinInput = document.getElementById('settings-manager-pin-confirm').value.trim();
             const clearPinRequested = document.getElementById('settings-manager-pin-clear').checked;
             const uiModeSelection = document.getElementById('settings-ui-mode').value;
+            const printerProfileSelection = document.getElementById('settings-printer-profile').value;
+            const receiptCurrencyModeSelection = document.getElementById('settings-receipt-currency-mode').value;
+            const receiptFeedLinesInput = Number(document.getElementById('settings-receipt-feed-lines').value);
             const hasExistingPin = hasManagerPinConfigured();
 
             if (!name) {
@@ -3390,6 +3876,10 @@
             }
             if (receiptNoteInput.length > RECEIPT_NOTE_MAX_LENGTH) {
                 customAlert(`Receipt note must be ${RECEIPT_NOTE_MAX_LENGTH} characters or less.`, "Input Error", 'error');
+                return;
+            }
+            if (!Number.isFinite(receiptFeedLinesInput) || receiptFeedLinesInput < RECEIPT_FEED_LINES_MIN || receiptFeedLinesInput > RECEIPT_FEED_LINES_MAX) {
+                customAlert(`Thermal feed lines must be between ${RECEIPT_FEED_LINES_MIN} and ${RECEIPT_FEED_LINES_MAX}.`, "Input Error", 'error');
                 return;
             }
             if (newPinInput && !/^\d{4,8}$/.test(newPinInput)) {
@@ -3459,6 +3949,9 @@
                 managerPinHash: nextPinHash,
                 managerPinSalt: nextPinSalt,
                 uiMode: uiModeSelection === UI_MODE_COMPACT ? UI_MODE_COMPACT : UI_MODE_DEFAULT,
+                printerProfile: normalizePrinterProfile(printerProfileSelection),
+                receiptCurrencyMode: normalizeReceiptCurrencyMode(receiptCurrencyModeSelection),
+                receiptFeedLines: normalizeReceiptFeedLines(receiptFeedLinesInput),
                 updatedAt: serverTimestamp()
             };
 
@@ -3828,6 +4321,8 @@
                     quantity: 1
                 });
             }
+            lastTouchedOrderItemId = itemId;
+            pendingOrderRevealItemId = itemId;
             renderOrder();
         }
 
@@ -3838,6 +4333,11 @@
                 
                 if (currentOrder[itemIndex].quantity <= 0) {
                     currentOrder.splice(itemIndex, 1); // Remove item if quantity is zero or less
+                    lastTouchedOrderItemId = currentOrder[Math.min(itemIndex, currentOrder.length - 1)]?.id || '';
+                    pendingOrderRevealItemId = lastTouchedOrderItemId;
+                } else {
+                    lastTouchedOrderItemId = itemId;
+                    pendingOrderRevealItemId = itemId;
                 }
             }
             renderOrder();
@@ -3856,40 +4356,74 @@
         }
 
         function renderOrder() {
-            const emptyMessageElement = document.getElementById('empty-order-message');
+            const totalItemCount = currentOrder.reduce((sum, item) => sum + item.quantity, 0);
+            const lastTouchedItem = currentOrder.find(item => item.id === lastTouchedOrderItemId)
+                || currentOrder[currentOrder.length - 1]
+                || null;
+
+            if (orderItemCount) {
+                orderItemCount.textContent = `${totalItemCount} ${totalItemCount === 1 ? 'item' : 'items'}`;
+            }
+
+            if (orderLastAddedNote) {
+                if (lastTouchedItem) {
+                    orderLastAddedNote.classList.remove('hidden');
+                    orderLastAddedNote.textContent = `Last added: ${lastTouchedItem.name} · x${lastTouchedItem.quantity} · ₹${(lastTouchedItem.price * lastTouchedItem.quantity).toFixed(2)}`;
+                } else {
+                    orderLastAddedNote.classList.add('hidden');
+                    orderLastAddedNote.textContent = '';
+                }
+            }
             
             if (currentOrder.length === 0) {
-                orderList.innerHTML = '';
-                if (emptyMessageElement) emptyMessageElement.style.display = 'block';
+                orderList.innerHTML = '<p id="empty-order-message" class="text-gray-400 text-center italic mt-8">No items added yet.</p>';
             } else {
-                if (emptyMessageElement) emptyMessageElement.style.display = 'none';
-
                 const itemsHtml = currentOrder.map(item => {
                     const itemTotal = (item.price * item.quantity).toFixed(2);
+                    const isLastTouched = item.id === lastTouchedOrderItemId;
                     return `
-                        <div class="flex items-center justify-between p-2 bg-gray-50 rounded-lg shadow-sm">
-                            <div class="flex-grow">
-                                <span class="font-medium text-gray-800">${escapeHtml(item.name)}</span>
-                                <span class="text-xs text-gray-500 block">₹${item.price.toFixed(2)} x ${item.quantity}</span>
+                        <div data-order-item-id="${escapeHtml(item.id)}" class="flex items-center justify-between gap-2 p-2 rounded-xl shadow-sm border ${isLastTouched ? 'bg-indigo-50 border-indigo-200 ring-2 ring-indigo-200/70' : 'bg-white border-gray-200'}">
+                            <div class="min-w-0 flex-grow">
+                                <div class="flex items-center gap-2">
+                                    <span class="font-semibold text-sm text-gray-800 truncate">${escapeHtml(item.name)}</span>
+                                    ${isLastTouched ? '<span class="inline-flex items-center rounded-full bg-indigo-100 px-1.5 py-0.5 text-[10px] font-semibold text-indigo-700">Active</span>' : ''}
+                                </div>
+                                <span class="text-[11px] text-gray-500 block">₹${item.price.toFixed(2)} each · Qty ${item.quantity}</span>
                             </div>
-                            <div class="flex items-center space-x-2">
-                                <span class="font-semibold text-gray-700 mr-2">₹${itemTotal}</span>
-                                <button onclick="updateQuantity('${item.id}', -1)" class="text-white bg-red-400 hover:bg-red-500 w-6 h-6 rounded-full text-sm">-</button>
-                                <button onclick="updateQuantity('${item.id}', 1)" class="text-white bg-green-400 hover:bg-green-500 w-6 h-6 rounded-full text-sm">+</button>
+                            <div class="flex items-center gap-2 shrink-0">
+                                <span class="font-semibold text-gray-700 min-w-[66px] text-right">₹${itemTotal}</span>
+                                <button onclick="updateQuantity('${item.id}', -1)" class="text-white bg-red-400 hover:bg-red-500 w-7 h-7 xl:w-6 xl:h-6 rounded-full text-sm xl:text-xs font-bold leading-none">-</button>
+                                <button onclick="updateQuantity('${item.id}', 1)" class="text-white bg-green-400 hover:bg-green-500 w-7 h-7 xl:w-6 xl:h-6 rounded-full text-sm xl:text-xs font-bold leading-none">+</button>
                             </div>
                         </div>
                     `;
                 });
                 orderList.innerHTML = itemsHtml.join('');
             }
+
+            if (pendingOrderRevealItemId) {
+                const revealItemId = pendingOrderRevealItemId;
+                pendingOrderRevealItemId = '';
+                requestAnimationFrame(() => {
+                    const targetCard = Array.from(orderList.querySelectorAll('[data-order-item-id]'))
+                        .find((element) => element.getAttribute('data-order-item-id') === revealItemId);
+                    if (targetCard) {
+                        targetCard.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                    }
+                });
+            }
+
             calculateTotals();
             refreshOrderFlowIndicator();
+            requestDesktopOrderPanelHeightSync();
         }
 
         function clearOrder(options = {}) {
             const showAlert = options.showAlert !== false;
             const focusSearchAfter = options.focusSearch !== false;
             currentOrder = [];
+            lastTouchedOrderItemId = '';
+            pendingOrderRevealItemId = '';
             setOrderEditMode(null);
             renderOrder();
             document.getElementById('order-type').value = 'Table/Dine-In';
@@ -4021,6 +4555,9 @@
             normalized.status = normalizeOrderStatus(normalized.status);
             normalized.revision = Math.max(1, Number(normalized.revision || 1));
             normalized.auditTrail = normalizeAuditTrail(normalized.auditTrail);
+            normalized.printerProfile = normalizePrinterProfile(normalized.printerProfile || restaurantSettings.printerProfile);
+            normalized.receiptCurrencyMode = normalizeReceiptCurrencyMode(normalized.receiptCurrencyMode || restaurantSettings.receiptCurrencyMode);
+            normalized.receiptFeedLines = normalizeReceiptFeedLines(normalized.receiptFeedLines ?? restaurantSettings.receiptFeedLines);
             if (normalized.status === ORDER_STATUS_BILLED) {
                 normalized.billNumber = getOrderBillNumber(normalized);
             } else {
@@ -4228,6 +4765,9 @@
                 restaurantName: restaurantSettings.restaurantName,
                 receiptFooterMessage: restaurantSettings.receiptFooterMessage || DEFAULT_SETTINGS.receiptFooterMessage,
                 receiptNote: restaurantSettings.receiptNote || '',
+                printerProfile: normalizePrinterProfile(restaurantSettings.printerProfile),
+                receiptCurrencyMode: normalizeReceiptCurrencyMode(restaurantSettings.receiptCurrencyMode),
+                receiptFeedLines: normalizeReceiptFeedLines(restaurantSettings.receiptFeedLines),
                 orderType: context.orderTypeDisplay,
                 counter: context.counterValue,
                 timestamp: createdAt,
@@ -4456,7 +4996,7 @@
             return parsed;
         }
 
-        function buildReceiptHtml(orderRecord, options = {}) {
+        function buildReceiptDocument(orderRecord, options = {}) {
             const order = normalizeOrderRecord(orderRecord || {});
             const items = normalizeOrderItems(order.items);
             const subtotal = Number(order.subtotal || 0);
@@ -4464,106 +5004,206 @@
             const totalPayable = Number(order.totalPayable || 0);
             const orderDate = getSafeOrderDate(order.timestamp);
 
-            const safeRestaurantName = escapeHtml(order.restaurantName || restaurantSettings.restaurantName || DEFAULT_SETTINGS.restaurantName);
-            const safeGstNumber = escapeHtml(restaurantSettings.gstNumber || '');
-            const safePhone = escapeHtml(restaurantSettings.phone || '');
-            const safeAddress = escapeHtml(restaurantSettings.address || '');
-            const safeOrderType = escapeHtml(order.orderType || 'N/A');
-            const safeCounter = escapeHtml(order.counter || 'N/A');
-            const safeBillNumber = escapeHtml(getOrderBillNumber(order) || 'N/A');
             const taxPercent = Number.isFinite(Number(order.taxPercent))
                 ? Number(order.taxPercent)
                 : Number(restaurantSettings.gstPercent || DEFAULT_SETTINGS.gstPercent);
-            const gstLabel = formatTaxLabel(taxPercent);
-            const duplicateLabel = options.duplicateLabel ? escapeHtml(options.duplicateLabel) : '';
-            const duplicateMeta = options.duplicateMeta ? escapeHtml(options.duplicateMeta) : '';
-            const receiptFooterRaw = (order.receiptFooterMessage || restaurantSettings.receiptFooterMessage || DEFAULT_SETTINGS.receiptFooterMessage || '').toString().trim();
-            const receiptFooterHtml = escapeHtml(receiptFooterRaw || DEFAULT_SETTINGS.receiptFooterMessage).replace(/\n/g, '<br>');
-            const receiptNoteRaw = (order.receiptNote || restaurantSettings.receiptNote || '').toString().trim();
-            const receiptNoteHtml = escapeHtml(receiptNoteRaw).replace(/\n/g, '<br>');
-            const receiptHeaderNoteHtml = receiptNoteHtml
-                ? `<p style="font-size: 10px; margin: 6px 0 8px 0; text-align: center; line-height: 1.35;"><strong>Note:</strong><br>${receiptNoteHtml}</p>`
-                : '';
+            const gstLabel = formatTaxLabel(taxPercent).replace(/:$/, '');
 
-            const receiptMetaLines = [];
-            if (restaurantId) {
-                receiptMetaLines.push(`<p style="font-size: 10px; margin: 0 0 6px 0; text-align: center;">Restaurant ID: ${escapeHtml(restaurantId)}</p>`);
-            }
-            if (safeGstNumber) {
-                receiptMetaLines.push(`<p style="font-size: 10px; margin: 0 0 4px 0; text-align: center;">GSTIN: ${safeGstNumber}</p>`);
-            }
-            if (safePhone) {
-                receiptMetaLines.push(`<p style="font-size: 10px; margin: 0 0 4px 0; text-align: center;">Phone: ${safePhone}</p>`);
-            }
-            if (safeAddress) {
-                receiptMetaLines.push(`<p style="font-size: 10px; margin: 0 0 6px 0; text-align: center;">${safeAddress}</p>`);
+            const printerProfileConfig = getReceiptPrintProfile(order.printerProfile || restaurantSettings.printerProfile);
+            const currencyMode = normalizeReceiptCurrencyMode(order.receiptCurrencyMode || restaurantSettings.receiptCurrencyMode);
+            const asciiOnly = currencyMode === RECEIPT_CURRENCY_ASCII;
+            const lineWidth = printerProfileConfig.charsPerLine;
+            const feedLines = normalizeReceiptFeedLines(order.receiptFeedLines ?? restaurantSettings.receiptFeedLines);
+            const divider = '-'.repeat(lineWidth);
+            const heavyDivider = '='.repeat(lineWidth);
+
+            const restaurantName = sanitizeReceiptText(order.restaurantName || restaurantSettings.restaurantName || DEFAULT_SETTINGS.restaurantName, { asciiOnly });
+            const billNumber = sanitizeReceiptText(getOrderBillNumber(order) || 'N/A', { asciiOnly });
+            const orderType = sanitizeReceiptText(order.orderType || 'N/A', { asciiOnly });
+            const counter = sanitizeReceiptText(order.counter || 'N/A', { asciiOnly });
+            const gstNumber = sanitizeReceiptText(restaurantSettings.gstNumber || '', { asciiOnly });
+            const phone = sanitizeReceiptText(restaurantSettings.phone || '', { asciiOnly });
+            const address = sanitizeReceiptText(restaurantSettings.address || '', { asciiOnly });
+            const restaurantIdentifier = sanitizeReceiptText(restaurantId || '', { asciiOnly });
+            const duplicateLabel = sanitizeReceiptText(options.duplicateLabel || '', { asciiOnly });
+            const duplicateMeta = sanitizeReceiptText(options.duplicateMeta || '', { asciiOnly });
+            const receiptFooter = sanitizeReceiptText(order.receiptFooterMessage || restaurantSettings.receiptFooterMessage || DEFAULT_SETTINGS.receiptFooterMessage, { asciiOnly });
+            const receiptNote = sanitizeReceiptText(order.receiptNote || restaurantSettings.receiptNote || '', { asciiOnly });
+
+            const dateText = sanitizeReceiptText(orderDate.toLocaleDateString(), { asciiOnly });
+            const timeText = sanitizeReceiptText(orderDate.toLocaleTimeString(), { asciiOnly });
+
+            const lines = [];
+            const pushWrapped = (value, center = false) => {
+                const wrapped = wrapReceiptText(value, lineWidth, { asciiOnly });
+                wrapped.forEach(line => {
+                    lines.push(center ? centerReceiptLine(line, lineWidth, { asciiOnly }) : line);
+                });
+            };
+
+            pushWrapped(restaurantName, true);
+            if (duplicateLabel) pushWrapped(duplicateLabel, true);
+            if (duplicateMeta) pushWrapped(duplicateMeta, true);
+            if (restaurantIdentifier) pushWrapped(`Restaurant ID: ${restaurantIdentifier}`, true);
+            if (gstNumber) pushWrapped(`GSTIN: ${gstNumber}`, true);
+            if (phone) pushWrapped(`Phone: ${phone}`, true);
+            if (address) pushWrapped(address, true);
+            if (receiptNote) {
+                lines.push(centerReceiptLine('Note:', lineWidth, { asciiOnly }));
+                pushWrapped(receiptNote, true);
             }
 
-            const receiptItems = items.map(item => `
-                <div style="display:flex; justify-content:space-between; font-size: 10px;">
-                    <span>${escapeHtml(item.name)} (x${item.quantity})</span>
-                    <span>₹${Number(item.total || 0).toFixed(2)}</span>
-                </div>
-            `).join('') || '<p style="font-size:10px;">No items found.</p>';
+            lines.push(divider);
+            pushWrapped(`Bill No: ${billNumber}`);
+            pushWrapped(`Order: ${orderType}`);
+            pushWrapped(`Counter: ${counter}`);
+            pushWrapped(`Date: ${dateText}`);
+            pushWrapped(`Time: ${timeText}`);
+            lines.push(divider);
 
-            return `
+            if (items.length === 0) {
+                pushWrapped('No items');
+            } else {
+                items.forEach(item => {
+                    const itemLabel = sanitizeReceiptText(`${item.name} (x${item.quantity})`, { asciiOnly });
+                    const amountText = formatReceiptMoney(item.total || 0, currencyMode, { trimZeros: true });
+                    const labelWidth = Math.max(8, lineWidth - amountText.length - 1);
+                    const wrappedItem = wrapReceiptText(itemLabel, labelWidth, { asciiOnly });
+                    if (wrappedItem.length > 0) {
+                        lines.push(formatReceiptPairLine(wrappedItem[0], amountText, lineWidth, { asciiOnly }));
+                        for (let i = 1; i < wrappedItem.length; i += 1) {
+                            lines.push(wrappedItem[i]);
+                        }
+                    }
+                });
+            }
+
+            lines.push(divider);
+            lines.push(formatReceiptPairLine('Subtotal', formatReceiptMoney(subtotal, currencyMode, { trimZeros: true }), lineWidth, { asciiOnly }));
+            lines.push(formatReceiptPairLine(gstLabel, formatReceiptMoney(taxAmount, currencyMode, { trimZeros: true }), lineWidth, { asciiOnly }));
+            lines.push(heavyDivider);
+            lines.push(formatReceiptPairLine('TOTAL', formatReceiptMoney(totalPayable, currencyMode), lineWidth, { asciiOnly }));
+            lines.push(heavyDivider);
+
+            if (receiptFooter) {
+                lines.push('');
+                pushWrapped(receiptFooter, true);
+            }
+
+            for (let i = 0; i < feedLines; i += 1) {
+                lines.push('');
+            }
+
+            const pageSpec = getReceiptPageSpec(printerProfileConfig, lines.length);
+            const bodyWidthCss = printerProfileConfig.isThermal ? `${printerProfileConfig.paperWidthMm}mm` : '100%';
+            const bodyOverflowCss = printerProfileConfig.isThermal ? 'hidden' : 'visible';
+            const receiptBreakInsideCss = printerProfileConfig.isThermal ? 'avoid-page' : 'auto';
+            const receiptPageBreakInsideCss = printerProfileConfig.isThermal ? 'avoid' : 'auto';
+            const receiptText = escapeHtml(lines.join('\n'));
+
+            const html = `
                 <!DOCTYPE html>
                 <html>
                 <head>
                     <title>QuickServe Receipt</title>
                     <style>
-                        body { margin: 0; padding: 0; }
-                        @page { margin: 0.5cm; }
-                        .receipt {
-                            width: 58mm;
-                            margin: 0 auto;
-                            padding: 10px;
-                            font-family: monospace;
-                            font-size: 10px;
-                            line-height: 1.4;
-                            color: #000;
+                        @page {
+                            size: ${pageSpec.css};
+                            margin: ${printerProfileConfig.pageMarginMm}mm;
                         }
-                        hr { border-top: 1px dashed black; margin: 5px 0; border-bottom: none; }
+                        html, body {
+                            margin: 0;
+                            padding: 0;
+                            background: #fff;
+                            width: ${bodyWidthCss};
+                            -webkit-print-color-adjust: exact;
+                            print-color-adjust: exact;
+                            overflow: ${bodyOverflowCss};
+                        }
+                        #receipt-content {
+                            box-sizing: border-box;
+                            width: ${printerProfileConfig.contentWidthMm}mm;
+                            max-width: ${printerProfileConfig.contentWidthMm}mm;
+                            margin: 0 auto;
+                            padding: 0;
+                            font-family: "Courier New", "Liberation Mono", "Lucida Console", monospace;
+                            font-size: ${printerProfileConfig.fontSizePx}px;
+                            line-height: ${printerProfileConfig.lineHeight};
+                            font-weight: ${printerProfileConfig.fontWeight};
+                            letter-spacing: 0;
+                            white-space: pre-wrap;
+                            word-break: break-word;
+                            overflow-wrap: anywhere;
+                            color: #000;
+                            text-rendering: optimizeSpeed;
+                            font-variant-ligatures: none;
+                            page-break-inside: ${receiptPageBreakInsideCss};
+                            break-inside: ${receiptBreakInsideCss};
+                            overflow: hidden;
+                        }
+                        @media print {
+                            html, body {
+                                width: ${bodyWidthCss};
+                            }
+                        }
                     </style>
                 </head>
                 <body>
-                    <div class="receipt" id="receipt-content">
-                        <h1 style="font-size: 14px; margin: 0 0 5px 0; font-weight: bold; text-align: center;">${safeRestaurantName}</h1>
-                        ${duplicateLabel ? `<p style="font-size: 10px; margin: 0 0 6px 0; text-align: center; color: #b91c1c; font-weight: bold;">${duplicateLabel}</p>` : ''}
-                        ${duplicateMeta ? `<p style="font-size: 9px; margin: 0 0 6px 0; text-align: center; color: #6b7280;">${duplicateMeta}</p>` : ''}
-                        ${receiptMetaLines.join('')}
-                        ${receiptHeaderNoteHtml}
-                        <hr>
-                        <div style="text-align: left; margin-bottom: 5px;">
-                            <p style="font-size: 10px; margin: 2px 0;">Bill No: ${safeBillNumber}</p>
-                            <p style="font-size: 10px; margin: 2px 0; font-weight: bold;">Order: ${safeOrderType}</p>
-                            <p style="font-size: 10px; margin: 2px 0;">Counter: ${safeCounter}</p>
-                            <p style="font-size: 10px; margin: 2px 0;">Date: ${orderDate.toLocaleDateString()}</p>
-                            <p style="font-size: 10px; margin: 2px 0;">Time: ${orderDate.toLocaleTimeString()}</p>
-                        </div>
-                        <hr>
-
-                        <div style="text-align: left; margin-top: 10px; margin-bottom: 10px; font-weight: bold;">
-                            ${receiptItems}
-                        </div>
-
-                        <hr>
-                        <div style="text-align: right; margin-top: 5px;">
-                            <div style="display:flex; justify-content:space-between; font-size: 10px;"><span>Subtotal:</span><span>₹${subtotal.toFixed(2)}</span></div>
-                            <div style="display:flex; justify-content:space-between; font-size: 10px;"><span>${gstLabel}</span><span>₹${taxAmount.toFixed(2)}</span></div>
-                            <div style="display:flex; justify-content:space-between; font-size: 12px; margin-top: 5px; font-weight: bold;"><span>TOTAL:</span><span>₹${totalPayable.toFixed(2)}</span></div>
-                        </div>
-
-                        <hr>
-                        <p style="font-size: 10px; margin-top: 10px; text-align: center;">${receiptFooterHtml}</p>
-                    </div>
+                    <pre id="receipt-content">${receiptText}</pre>
                 </body>
                 </html>
             `;
+
+            return {
+                html,
+                pageSize: pageSpec.widthMicrons && pageSpec.heightMicrons
+                    ? { width: pageSpec.widthMicrons, height: pageSpec.heightMicrons }
+                    : null,
+                isThermal: printerProfileConfig.isThermal
+            };
         }
 
-        function startReceiptPrintFlow(receiptHTML, options = {}) {
+        function buildReceiptHtml(orderRecord, options = {}) {
+            return buildReceiptDocument(orderRecord, options).html;
+        }
+
+        async function startDesktopReceiptPrintFlow(receiptDocument, options = {}) {
             const shouldClearCurrentOrder = options.clearCurrentOrder === true;
+
+            try {
+                const result = await DESKTOP_BRIDGE.printReceipt({
+                    html: receiptDocument.html,
+                    pageSize: receiptDocument.pageSize
+                });
+
+                if (!result?.success) {
+                    const reason = (result?.failureReason || '').trim();
+                    if (reason && !/cancel/i.test(reason)) {
+                        customAlert(`Desktop print failed. ${reason}`, "Print Error", 'error');
+                    }
+                    return false;
+                }
+
+                if (shouldClearCurrentOrder) {
+                    clearOrder({ showAlert: false, focusSearch: true });
+                }
+                return true;
+            } catch (error) {
+                console.error("Desktop print flow failed:", error);
+                customAlert("Desktop printing failed. Falling back to browser printing may be required.", "Print Error", 'error');
+                return false;
+            } finally {
+                releasePrintLock();
+            }
+        }
+
+        async function startReceiptPrintFlow(receiptDocument, options = {}) {
+            const shouldClearCurrentOrder = options.clearCurrentOrder === true;
+            const receiptHTML = typeof receiptDocument === 'string' ? receiptDocument : receiptDocument.html;
+
+            if (canUseDesktopNativePrint() && receiptDocument && typeof receiptDocument === 'object') {
+                return startDesktopReceiptPrintFlow(receiptDocument, options);
+            }
 
             let printWindow = null;
 
@@ -4662,8 +5302,8 @@
                     return;
                 }
 
-                const receiptHTML = buildReceiptHtml(savedOrder);
-                const started = startReceiptPrintFlow(receiptHTML, { clearCurrentOrder: true });
+                const receiptDocument = buildReceiptDocument(savedOrder);
+                const started = await startReceiptPrintFlow(receiptDocument, { clearCurrentOrder: true });
                 if (!started) {
                     releasePrintLock();
                 }
@@ -4709,11 +5349,11 @@
 
             try {
                 await saveOrderRecord(updated);
-                const receiptHTML = buildReceiptHtml(updated, {
+                const receiptDocument = buildReceiptDocument(updated, {
                     duplicateLabel: 'DUPLICATE COPY',
                     duplicateMeta: `Reprint #${nextReprintCount} at ${reprintAt.toLocaleString()}`
                 });
-                const started = startReceiptPrintFlow(receiptHTML, { clearCurrentOrder: false });
+                const started = await startReceiptPrintFlow(receiptDocument, { clearCurrentOrder: false });
                 if (!started) {
                     releasePrintLock();
                 }
@@ -5969,6 +6609,10 @@ Based on this, suggest one creative and compelling vegetarian Daily Special.`;
                 updateNetworkStatusBadge();
                 updateEntitlementUI();
             });
+
+            window.addEventListener('resize', requestDesktopOrderPanelHeightSync);
+            window.addEventListener('scroll', requestDesktopOrderPanelHeightSync, { passive: true });
+            requestDesktopOrderPanelHeightSync();
 
             if ('serviceWorker' in navigator) {
                 swRegistrationPromise = navigator.serviceWorker.register('./service-worker.js').then(() => {
